@@ -8,8 +8,8 @@ class App extends Component {
         this.state = JSON.parse(window.localStorage.getItem('state')) || {
             newTask: "",
             tasks: [],
-            // progTask: [],
-            // completed: []
+            progressList: [],
+            completedList: []
         }
     }
     setState(state) {
@@ -21,6 +21,17 @@ class App extends Component {
             [key]: value
         });
     }
+
+    // setProgress() {
+    //     const progressList= [...this.state.progressList];
+    //     this.task.push(progressList);
+    //     this.task.filter(tasks);
+    //     this.setState({
+    //         tasks,
+    //         progressList
+    //         })
+    // };
+
 // Newly added tasks
     addTask(e) {
         const newTask = {
@@ -41,12 +52,18 @@ class App extends Component {
     };
     deleteTask(id) {
         const tasks = [...this.state.tasks];
-
         const updatedTasks = tasks.filter(tasks => tasks.id !== id);
-
         this.setState({tasks: updatedTasks})
     };
     // In Progress tasks
+    //
+    // setProgress(id) {
+    //     const progressList = [...this.state.progressList];
+    //     progressList.push(this.state.id);
+    //     const updatedProgress = progressList.filter(progressList => progressList.id !== id);
+    //     this.setState({progressList: updatedProgress});
+    // };
+
     // Completed tasks
 
     render() {
@@ -93,7 +110,7 @@ class App extends Component {
                                                             className="Delete">X
                                                     </button>
                                                     {/*<button>Left</button>*/}
-                                                    {/*<button onClick={() => this.task(task.id)}>Right</button>*/}
+                                                    <button onClick={() => this.setProgress(task.id)}>Right</button>
                                                 </div>
                                                 <div className="TaskCompleteButton">
                                                     {/*<button>Mark Completed</button>*/}
