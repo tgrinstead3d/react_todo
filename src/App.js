@@ -12,12 +12,10 @@ class App extends Component {
             // completed: []
         }
     }
-
     setState(state) {
         window.localStorage.setItem('state', JSON.stringify(state));
         super.setState(state);
     }
-
     updateInput(key, value) {
         this.setState({
             [key]: value
@@ -29,23 +27,18 @@ class App extends Component {
             id: 1 + Math.random(),
             value: this.state.newTask.slice()
         };
-
         const tasks = [...this.state.tasks];
-
         tasks.push(newTask);
-
         this.setState({
             tasks,
             newTask: "",
         });
         e.preventDefault();
     };
-
     submitPrevent(e) {
         console.log('Submitted!')
         e.preventDefault();
     };
-
     deleteTask(id) {
         const tasks = [...this.state.tasks];
 
@@ -53,10 +46,7 @@ class App extends Component {
 
         this.setState({tasks: updatedTasks})
     };
-
-
     // In Progress tasks
-
     // Completed tasks
 
     render() {
