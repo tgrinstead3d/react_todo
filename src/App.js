@@ -1,5 +1,6 @@
 import './App.css';
 import {Component} from 'react';
+import Card from "./components/Card";
 
 class App extends Component {
     constructor(props) {
@@ -89,107 +90,108 @@ class App extends Component {
                 </>
                 <div className="AppBackground">
                     <div className="TodoColumn">
-                        <header className="Header">
-                            <h1>Tasks To Do</h1>
-                        </header>
-                        <main className="BodyWrapper">
-                            <div className="TaskCount">
-                                <h5>You have {this.state.tasks.length} new tasks</h5>
-                            </div>
-                            <div className="TaskCard">
-                                <ul>
-                                    {this.state.tasks.map(task => {
-                                        return (
-                                            <li key={task.id} className="ListTitle">
-                                                <div className="ListLeft">
-                                                    {task.value}
-                                                </div>
-                                                <div className="ListRight">
-                                                    {/*<button>Edit</button>*/}
-                                                    <button onClick={() => this.deleteTask(task.id)}
-                                                            className="Delete">X
-                                                    </button>
-                                                    {/*<button>Left</button>*/}
-                                                    <button onClick={() => this.setProgress(task.id)}>Right</button>
-                                                </div>
-                                                <div className="TaskCompleteButton">
-                                                    {/*<button>Mark Completed</button>*/}
-                                                </div>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </main>
-                    </div>
-                    <div className="InProgressColumn">
-                        <header className="Header">
-                            <h1>In progress</h1>
-                        </header>
-                        <main className="BodyWrapper">
-                            <div className="TaskCount">
-                                <h5>You have {this.state.tasks.length} tasks in progress</h5>
-                            </div>
-                            <div className="TaskCard">
-                                <ul>
-                                    {this.state.tasks.map(task => {
-                                        return (
-                                            <li key={task.id} className="ListTitle">
-                                                <div className="ListLeft">
-                                                    {task.value}
-                                                </div>
-                                                <div className="ListRight">
-                                                    {/*<button>Edit</button>*/}
-                                                    <button onClick={() => this.deleteTask(task.id)}
-                                                            className="Delete">X
-                                                    </button>
-                                                    {/*<button>Left</button>*/}
-                                                    {/*<button>Right</button>*/}
-                                                </div>
-                                                <div className="TaskCompleteButton">
-                                                    {/*<button>Mark Completed</button>*/}
-                                                </div>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </main>
-                    </div>
-                    <div className="CompletedColumn">
-                        <header className="Header">
-                            <h1>Completed Tasks</h1>
-                        </header>
-                        <main className="BodyWrapper">
-                            <div className="TaskCount">
-                                <h5>You have {this.state.tasks.length} completed tasks</h5>
-                            </div>
-                            <div className="TaskCard">
-                                <ul>
-                                    {this.state.tasks.map(task => {
-                                        return (
-                                            <li key={task.id} className="ListTitle">
-                                                <div className="ListLeft">
-                                                    {task.value}
-                                                </div>
-                                                <div className="ListRight">
-                                                    {/*<button>Edit</button>*/}
-                                                    <button onClick={() => this.deleteTask(task.id)}
-                                                            className="Delete">X
-                                                    </button>
-                                                    {/*<button>Left</button>*/}
-                                                    {/*<button>Right</button>*/}
-                                                </div>
-                                                <div className="TaskCompleteButton">
-                                                    {/*<button>Mark Completed</button>*/}
-                                                </div>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </main>
-                    </div>
+                    {/*    <header className="Header">*/}
+                    {/*        <h1>Tasks To Do</h1>*/}
+                    {/*    </header>*/}
+                    {/*    <main className="BodyWrapper">*/}
+                    {/*        <div className="TaskCount">*/}
+                    {/*            <h5>You have {this.state.tasks.length} new tasks</h5>*/}
+                    {/*        </div>*/}
+                    {/*        /!*<Card />*!/*/}
+                    {/*        <div className="TaskCard">*/}
+                    {/*            <ul>*/}
+                    {/*                {this.state.tasks.map(task => {*/}
+                    {/*                    return (*/}
+                    {/*                        <li key={task.id} className="ListTitle">*/}
+                    {/*                            <div className="ListLeft">*/}
+                    {/*                                {task.value}*/}
+                    {/*                            </div>*/}
+                    {/*                            <div className="ListRight">*/}
+                    {/*                                /!*<button>Edit</button>*!/*/}
+                    {/*                                <button onClick={() => this.deleteTask(task.id)}*/}
+                    {/*                                        className="Delete">X*/}
+                    {/*                                </button>*/}
+                    {/*                                /!*<button>Left</button>*!/*/}
+                    {/*                                <button onClick={() => this.setProgress(task.id)}>Right</button>*/}
+                    {/*                            </div>*/}
+                    {/*                            <div className="TaskCompleteButton">*/}
+                    {/*                                /!*<button>Mark Completed</button>*!/*/}
+                    {/*                            </div>*/}
+                    {/*                        </li>*/}
+                    {/*                    )*/}
+                    {/*                })}*/}
+                    {/*            </ul>*/}
+                    {/*        </div>*/}
+                    {/*    </main>*/}
+                    {/*</div>*/}
+                    {/*<div className="InProgressColumn">*/}
+                    {/*    <header className="Header">*/}
+                    {/*        <h1>In progress</h1>*/}
+                    {/*    </header>*/}
+                    {/*    <main className="BodyWrapper">*/}
+                    {/*        <div className="TaskCount">*/}
+                    {/*            <h5>You have {this.state.tasks.length} tasks in progress</h5>*/}
+                    {/*        </div>*/}
+                    {/*        <div className="TaskCard">*/}
+                    {/*            <ul>*/}
+                    {/*                {this.state.tasks.map(task => {*/}
+                    {/*                    return (*/}
+                    {/*                        <li key={task.id} className="ListTitle">*/}
+                    {/*                            <div className="ListLeft">*/}
+                    {/*                                {task.value}*/}
+                    {/*                            </div>*/}
+                    {/*                            <div className="ListRight">*/}
+                    {/*                                /!*<button>Edit</button>*!/*/}
+                    {/*                                <button onClick={() => this.deleteTask(task.id)}*/}
+                    {/*                                        className="Delete">X*/}
+                    {/*                                </button>*/}
+                    {/*                                /!*<button>Left</button>*!/*/}
+                    {/*                                /!*<button>Right</button>*!/*/}
+                    {/*                            </div>*/}
+                    {/*                            <div className="TaskCompleteButton">*/}
+                    {/*                                /!*<button>Mark Completed</button>*!/*/}
+                    {/*                            </div>*/}
+                    {/*                        </li>*/}
+                    {/*                    )*/}
+                    {/*                })}*/}
+                    {/*            </ul>*/}
+                    {/*        </div>*/}
+                    {/*    </main>*/}
+                    {/*</div>*/}
+                    {/*<div className="CompletedColumn">*/}
+                    {/*    <header className="Header">*/}
+                    {/*        <h1>Completed Tasks</h1>*/}
+                    {/*    </header>*/}
+                    {/*    <main className="BodyWrapper">*/}
+                    {/*        <div className="TaskCount">*/}
+                    {/*            <h5>You have {this.state.tasks.length} completed tasks</h5>*/}
+                    {/*        </div>*/}
+                    {/*        <div className="TaskCard">*/}
+                    {/*            <ul>*/}
+                    {/*                {this.state.tasks.map(task => {*/}
+                    {/*                    return (*/}
+                    {/*                        <li key={task.id} className="ListTitle">*/}
+                    {/*                            <div className="ListLeft">*/}
+                    {/*                                {task.value}*/}
+                    {/*                            </div>*/}
+                    {/*                            <div className="ListRight">*/}
+                    {/*                                /!*<button>Edit</button>*!/*/}
+                    {/*                                <button onClick={() => this.deleteTask(task.id)}*/}
+                    {/*                                        className="Delete">X*/}
+                    {/*                                </button>*/}
+                    {/*                                /!*<button>Left</button>*!/*/}
+                    {/*                                /!*<button>Right</button>*!/*/}
+                    {/*                            </div>*/}
+                    {/*                            <div className="TaskCompleteButton">*/}
+                    {/*                                /!*<button>Mark Completed</button>*!/*/}
+                    {/*                            </div>*/}
+                    {/*                        </li>*/}
+                    {/*                    )*/}
+                    {/*                })}*/}
+                    {/*            </ul>*/}
+                    {/*        </div>*/}
+                    {/*    </main>*/}
+                    {/*</div>*/}
                 </div>
             </div>
         )
