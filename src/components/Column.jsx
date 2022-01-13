@@ -1,5 +1,5 @@
 import Card from "./Card";
-import '../Card.css';
+import '../Column.css';
 
 function Column({tasks}) {
     return (
