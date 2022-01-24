@@ -1,11 +1,11 @@
 import Card from "./Card";
 import '../Column.css';
 
-function Column({tasks}) {
+function Column({tasks, moveTask, title, completeTask}) {
     return (
         <div className="Column">
-            <h1>I'm a Column!</h1>
-            {tasks.map(task => <Card key={task.id} task={task} />)}
+            <h1>{title}</h1>
+            {tasks.map(task => <Card key={task.id} task={task} moveTask={moveTask} completeTask={completeTask}/>)}
         </div>
     );
 }

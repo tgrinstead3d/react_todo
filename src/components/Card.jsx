@@ -1,11 +1,12 @@
 // import {useState} from "react";
 
-function Card({task, moveToNext}) {
+function Card({task, moveTask, completeTask}) {
     return (
         <div className="TaskCard">
             <h4>{task.name}</h4>
             <p>{task.date}</p>
-            <button onClick={moveToNext}>Move Task</button>
+            <button onClick={() => moveTask(task)}>Move Task</button>
+            <button onClick={() => completeTask(task)}>Done</button>
         </div>
     );
 }
