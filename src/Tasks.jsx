@@ -50,7 +50,7 @@ function Tasks() {
                 <h1>Task Tracker</h1>
                 <AddTask addTask={addEntryToNewTasks}/>
                 <div className="ColumnDiv">
-                    <Column title={'New Tasks'} tasks={newTasks} moveTask={moveTask}/>
+                    <Column title={'New Tasks'} tasks={newTasks} moveTask={moveTask} completeTask={completeTask}/>
                     <Column title={'In Progress Tasks'} tasks={inProgressTasks} moveTask={moveTask} completeTask={completeTask}/>
                     <Column title={'Completed Tasks'} tasks={completedTasks} moveTask={moveTask} completeTask={completeTask}/>
                 </div>
