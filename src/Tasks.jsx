@@ -12,14 +12,13 @@ function Tasks() {
         const tasks = [...newTasks];
         tasks.push(task);
         setNewTasks(tasks);
-
         console.log('Submitted to new tasks');
     };
 
-    // const addEntryToInProgressTasks = task => {
+    // const moveTask = task => {
     //     const inProgressArray = [...inProgressTasks];
-    //     newTasks.filter();
-    //     inProgressArray.push(task);
+    //     newTasks.filter(task.id);
+    //     inProgressArray.push(task.id);
     //     setInProgressTasks(inProgressArray);
     //     console.log('Submitted to in progress tasks');
     // }
@@ -36,8 +35,6 @@ function Tasks() {
             <div>
                 <h1>Task Tracker</h1>
                 <AddTask addTask={addEntryToNewTasks}/>
-                {/*<AddTask addTask={addEntryToInProgressTasks}/>*/}
-                {/*<AddTask addTask={addEntryToCompletedTasks}/>*/}
                 <div className="ColumnDiv">
                     <Column tasks={newTasks}/>
                     {/*<Column tasks={inProgressTasks}/>*/}
