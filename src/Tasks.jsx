@@ -17,15 +17,45 @@ function Tasks() {
         console.log(newTasks);
     };
 
+    // const moveTask = task => {
+    //     const tasks = [...newTasks];
+    //     setNewTasks([...newTasks].filter(current => current.id !== task.id));
+    //     tasks.push(task);
+    //     setInProgressTasks(tasks);
+    //     console.log('Submitted to in progress tasks');
+    //     console.log(task);
+    //     console.log(inProgressTasks);
+    // };
+
     const moveTask = task => {
-        const tasks = [...inProgressTasks];
+        const tasks = [...newTasks];
         setNewTasks([...newTasks].filter(current => current.id !== task.id));
         tasks.push(task);
         setInProgressTasks(tasks);
         console.log('Submitted to in progress tasks');
         console.log(task);
         console.log(inProgressTasks);
-    }
+    };
+
+    // const moveTaskRight = task => {
+    //     const tasks = [...newTasks];
+    //     setNewTasks([...newTasks].filter(current => current.id !== task.id));
+    //     tasks.push(task);
+    //     setInProgressTasks(tasks);
+    //     console.log('Submitted to in progress tasks');
+    //     console.log(task);
+    //     console.log(inProgressTasks);
+    // };
+    //
+    // const moveTaskLeft = task => {
+    //     const tasks = [...inProgressTasks];
+    //     setInProgressTasks([...inProgressTasks].filter(current => current.id !== task.id));
+    //     tasks.push(task);
+    //     newTasks(tasks);
+    //     console.log('Submitted to in progress tasks');
+    //     console.log(task);
+    //     console.log(inProgressTasks);
+    // };
 
     const completeTask = task => {
         const tasks = [...completedTasks];
@@ -35,7 +65,14 @@ function Tasks() {
         console.log('Submitted to completed tasks');
         console.log(task);
         console.log(completedTasks);
-    }
+    };
+
+    // const moveTask = task => {
+    //     if (inProgressTasks.includes(task)) {
+    //         return moveTaskLeft();
+    // }
+    //     moveTaskRight();
+    // };
 
     // const addEntryToCompletedTasks = task => {
     //     const completedArray = [...completedTasks];
