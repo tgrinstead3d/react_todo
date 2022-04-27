@@ -5,81 +5,27 @@ import { useState } from 'react';
 
 function Tasks() {
     const [newTasks, setNewTasks] = useState([]);
-    const [inProgressTasks, setInProgressTasks] = useState([]);
+    const [currentTasks, setCurrentTasks] = useState([]);
     const [completedTasks, setCompletedTasks] = useState([]);
 
     const addEntryToNewTasks = task => {
         const tasks = [...newTasks];
         tasks.push(task);
         setNewTasks(tasks);
-        console.log('Submitted to new tasks');
-        console.log(task);
-        console.log(newTasks);
+        console.log('Added Task')
     };
-
-    // const moveTask = task => {
-    //     const tasks = [...newTasks];
-    //     setNewTasks([...newTasks].filter(current => current.id !== task.id));
-    //     tasks.push(task);
-    //     setInProgressTasks(tasks);
-    //     console.log('Submitted to in progress tasks');
-    //     console.log(task);
-    //     console.log(inProgressTasks);
-    // };
-
-    const moveTask = task => {
-        const tasks = [...newTasks];
-        setNewTasks([...newTasks].filter(current => current.id !== task.id));
-        tasks.push(task);
-        setInProgressTasks(tasks);
-        console.log('Submitted to in progress tasks');
-        console.log(task);
-        console.log(inProgressTasks);
+    const toCurrentTasks = task => {
+        setNewTasks([...newTasks].filter(current => current.id !== task.id))
+        setCompletedTasks([...completedTasks].filter(current => current.id !== task.id))
+        currentTasks.push(task);
+        setCurrentTasks(currentTasks);
     };
-
-    // const moveTaskRight = task => {
-    //     const tasks = [...newTasks];
-    //     setNewTasks([...newTasks].filter(current => current.id !== task.id));
-    //     tasks.push(task);
-    //     setInProgressTasks(tasks);
-    //     console.log('Submitted to in progress tasks');
-    //     console.log(task);
-    //     console.log(inProgressTasks);
-    // };
-    //
-    // const moveTaskLeft = task => {
-    //     const tasks = [...inProgressTasks];
-    //     setInProgressTasks([...inProgressTasks].filter(current => current.id !== task.id));
-    //     tasks.push(task);
-    //     newTasks(tasks);
-    //     console.log('Submitted to in progress tasks');
-    //     console.log(task);
-    //     console.log(inProgressTasks);
-    // };
-
-    const completeTask = task => {
-        const tasks = [...completedTasks];
-        setInProgressTasks([...inProgressTasks].filter(current => current.id !== task.id));
-        tasks.push(task);
-        setCompletedTasks(tasks);
-        console.log('Submitted to completed tasks');
-        console.log(task);
-        console.log(completedTasks);
+    const toCompletedTasks = task => {
+        setNewTasks([...newTasks].filter(current => current.id !== task.id))
+        setCurrentTasks([...currentTasks].filter(current => current.id !== task.id))
+        completedTasks.push(task);
+        setCompletedTasks(completedTasks);
     };
-
-    // const moveTask = task => {
-    //     if (inProgressTasks.includes(task)) {
-    //         return moveTaskLeft();
-    // }
-    //     moveTaskRight();
-    // };
-
-    // const addEntryToCompletedTasks = task => {
-    //     const completedArray = [...completedTasks];
-    //     completedArray.push(task);
-    //     setCompletedTasks(completedArray);
-    //     console.log('Submitted to completed tasks');
-    // }
 
     return (
         <div className="TasksWrapper">
@@ -87,9 +33,9 @@ function Tasks() {
                 <h1>Task Tracker</h1>
                 <AddTask addTask={addEntryToNewTasks}/>
                 <div className="ColumnDiv">
-                    <Column title={'New Tasks'} tasks={newTasks} moveTask={moveTask} completeTask={completeTask}/>
-                    <Column title={'In Progress Tasks'} tasks={inProgressTasks} moveTask={moveTask} completeTask={completeTask}/>
-                    <Column title={'Completed Tasks'} tasks={completedTasks} moveTask={moveTask} completeTask={completeTask}/>
+                    <Column title={'New Tasks'} tasks={newTasks} moveTask={toCurrentTasks} completeTask={toCompletedTasks}/>
+                    <Column title={'Current Tasks'} tasks={currentTasks} moveTask={toCompletedTasks} completeTask={toCompletedTasks}/>
+                    <Column title={'Completed Tasks'} tasks={completedTasks} moveTask={toCurrentTasks}/>
                 </div>
             </div>
         </div>

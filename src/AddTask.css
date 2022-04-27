@@ -1,0 +1,45 @@
+.TaskWrapper {
+    border: black 1px solid;
+    border-bottom: none;
+}
+.TaskFormHeader {
+    margin-top: -1rem;
+}
+h2 {
+    font-weight: 400;
+    color: black;
+}
+.FormTitle {
+    margin-bottom: .25rem;
+    height: 24px;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding-inline: 4px;
+}
+.FormTitle:focus {
+    outline: none;
+}
+.FormDate {
+    font-family: Arial, sans-serif;
+    margin-right: .5rem;
+    height: 24px;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding-inline: 4px;
+}
+.FormDate:focus {
+    outline: none;
+}
+.TaskSubmitButton {
+    text-decoration: none;
+    display: inline-block;
+    padding: .15rem;
+    height: 26px;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding-inline: 4px;
+    background-color: white;
+}
+.TaskSubmitButton:focus {
+    outline: none;
+}

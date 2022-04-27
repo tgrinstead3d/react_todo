@@ -1,0 +1,41 @@
+.TaskCard {
+    margin-bottom: 2rem;
+    text-align: left;
+    padding-inline: .5rem;
+    border: 1px black solid;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 4px 4px 10px;
+}
+.TitleText {
+    font-weight: 400;
+    margin-bottom: -1rem;
+}
+.Title {
+    font-weight: 300;
+    margin-left: .25rem;
+}
+.DueText {
+    font-weight: 500;
+    margin-bottom: -1rem;
+}
+.Buttons{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: .5rem;
+}
+.TitleDiv {
+    display: flex;
+    flex-direction: row;
+}
+.DueDiv {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin-bottom: .5rem;
+}
+.DateText {
+    display: block;
+    font-weight: 300;
+    margin: 0;
+    padding-left: .25rem;
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../AddTask.css'
 
 function AddTask({addTask}) {
     const [name, setName] = useState('');
@@ -22,6 +23,7 @@ function AddTask({addTask}) {
                 <div className="NewTaskInputs">
                     <input type="text" placeholder="Enter a title" className="FormTitle" aria-label="Title"
                            onChange={(event) => setName(event.target.value)}/>
+                    <br/>
                     <input type="date" className="FormDate" aria-label="Date"
                            onChange={(event) => setDate(event.target.value)}/>
                     <button type="submit" className="TaskSubmitButton">Create New Task</button>

@@ -1,9 +1,23 @@
 .TaskCard {
     display: flex;
     flex-direction: column;
+    background-color: beige;
 }
 
 .Column {
-    padding-inline: 2rem;
+    padding: 2rem;
     border: black 1px solid;
+    background-color: antiquewhite;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ColumnDiv {
+    background-color: blue;
+}
+.TaskWrapper {
+    background-color: burlywood;
+    text-align: center;
+    padding: .8rem;
 }
