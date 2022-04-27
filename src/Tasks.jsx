@@ -26,6 +26,10 @@ function Tasks() {
         setCompletedTasks(completedTasks);
     };
 
+    //TODO Create a delete button
+    //TODO Fix the move buttons
+    //TODO Add the ability to edit the task
+
     return (
         <div className="TasksWrapper">
             <div>
