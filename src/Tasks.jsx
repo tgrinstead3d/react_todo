@@ -12,13 +12,12 @@ function Tasks() {
         const tasks = [...newTasks];
         tasks.push(task);
         setNewTasks(tasks);
-        console.log('Added Task')
     };
     const toCurrentTasks = task => {
         setNewTasks([...newTasks].filter(current => current.id !== task.id))
         setCompletedTasks([...completedTasks].filter(current => current.id !== task.id))
         currentTasks.push(task);
-        setCurrentTasks(currentTasks);
+
     };
     const toCompletedTasks = task => {
         setNewTasks([...newTasks].filter(current => current.id !== task.id))

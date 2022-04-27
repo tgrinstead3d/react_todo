@@ -1,7 +1,7 @@
 .TaskCard {
     display: flex;
     flex-direction: column;
-    background-color: beige;
+    background-color: floralwhite;
 }
 
 .Column {
@@ -17,7 +17,7 @@
     background-color: blue;
 }
 .TaskWrapper {
-    background-color: burlywood;
+    background-color: seashell;
     text-align: center;
     padding: .8rem;
 }

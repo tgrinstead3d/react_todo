@@ -1,6 +1,6 @@
 import '../Card.css'
 
-function Card({task, moveTask, completeTask}) {
+function Card({task, moveTask, completeTask, removeTasks}) {
     return (
         <div className="TaskCard">
             <div className="TitleDiv">
@@ -13,6 +13,7 @@ function Card({task, moveTask, completeTask}) {
             <div className="Buttons">
                 <button onClick={() => moveTask(task)}>Move Task</button>
                 <button onClick={() => completeTask(task)}>Done</button>
+                <button onClick={() => removeTasks(task)}>Delete</button>
             </div>
         </div>
     );
