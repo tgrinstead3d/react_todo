@@ -3,6 +3,8 @@ import AddTask from "./components/AddTask";
 import "./Tasks.css";
 import { useState } from 'react';
 
+
+
 function Tasks() {
     const [newTasks, setNewTasks] = useState([]);
     const [currentTasks, setCurrentTasks] = useState([]);
@@ -26,6 +28,14 @@ function Tasks() {
         setCompletedTasks(completedTasks);
     };
 
+    const removeTasks = id => {
+       setNewTasks(newTasks.filter((task) => task.id !== id))
+        setCurrentTasks(currentTasks.filter((task) => task.id !== id))
+        setCompletedTasks(completedTasks.filter((task) => task.id !== id))
+    };
+
+
+
     //TODO Create a delete button
     //TODO Fix the move buttons
     //TODO Add the ability to edit the task
@@ -36,9 +46,9 @@ function Tasks() {
                 <h1>Task Tracker</h1>
                 <AddTask addTask={addEntryToNewTasks}/>
                 <div className="ColumnDiv">
-                    <Column title={'New Tasks'} tasks={newTasks} moveTask={toCurrentTasks} completeTask={toCompletedTasks}/>
-                    <Column title={'Current Tasks'} tasks={currentTasks} moveTask={toCompletedTasks} completeTask={toCompletedTasks}/>
-                    <Column title={'Completed Tasks'} tasks={completedTasks} moveTask={toCurrentTasks}/>
+                    <Column title={'New Tasks'} tasks={newTasks} moveTask={toCurrentTasks} completeTask={toCompletedTasks} removeTasks={removeTasks}/>
+                    <Column title={'Current Tasks'} tasks={currentTasks} moveTask={toCompletedTasks} completeTask={toCompletedTasks} removeTasks={removeTasks}/>
+                    <Column title={'Completed Tasks'} tasks={completedTasks} moveTask={toCurrentTasks} removeTasks={removeTasks}/>
                 </div>
             </div>
         </div>
